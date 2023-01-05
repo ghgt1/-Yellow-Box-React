@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDebounce } from "../../hooks/useDebounce";
 import { searchMovies } from "../../api/requests";
+import MovieElement from "./MovieElement";
+import styles from "./GetMovies.module.scss";
 
 const GetMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -13,6 +15,8 @@ const GetMovies = () => {
   let query = useQuery();
   // 제목은 디바운스로 처리
   const searchTerm = useDebounce(query.get("q"), 500);
+  console.log(searchTerm);
+  console.log(movies);
   const yearTerm = query.get("y");
   const typeTerm = query.get("t");
 
@@ -30,21 +34,21 @@ const GetMovies = () => {
   }, [searchTerm, yearTerm, typeTerm]);
 
   let searchResults = [];
-  if (typeTerm === "movie") {
+  if (movies) {
     searchResults = movies.map((movie) => {
-      return <p key={movie.id}>{movie.title}</p>;
-    });
-  } else if (typeTerm === "tv") {
-    searchResults = movies.map((movie) => {
-      return <p key={movie.id}>{movie.name}</p>;
-    });
-  } else {
-    searchResults = movies.map((movie) => {
-      return <p key={movie.id}>{movie.name || movie.title}</p>;
+      return <MovieElement key={movie.id} movieInfo={movie} />;
     });
   }
 
-  return <div>{searchResults}</div>;
+  return (
+    <div className={styles["movie-container"]}>
+      {searchResults.length !== 0 ? (
+        searchResults
+      ) : (
+        <span className={styles.inner}>검색결과가 없습니다.</span>
+      )}
+    </div>
+  );
 };
 
 export default GetMovies;
