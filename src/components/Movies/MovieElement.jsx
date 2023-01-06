@@ -13,7 +13,7 @@ const MovieElement = ({ movieInfo }) => {
     posterSrc = noImgEl;
   }
   return (
-    <Link className={styles.movie}>
+    <Link to={`details/${movieInfo.id}`} className={styles.movie}>
       <img src={posterSrc} alt="poster" />
       <div className={styles.description}>
         <h2>{movieInfo.title || movieInfo.name}</h2>
