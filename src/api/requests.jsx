@@ -18,7 +18,8 @@ export async function searchMovies(title, year = "", type = "multi", page) {
   }
 }
 
-export async function detailMovies(id) {
+export async function detailMovies(id, type) {
+  // 이 type은 media_type: movie or tv로 해야할듯
   try {
     let res = "";
     res = await fetch(
