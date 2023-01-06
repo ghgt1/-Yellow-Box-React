@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./MovieElement.module.scss";
 import noImgEl from "./../../assets/image-not-found.png";
 
@@ -12,11 +12,14 @@ const MovieElement = ({ movieInfo }) => {
   if (!movieInfo.poster_path) {
     posterSrc = noImgEl;
   }
+  const curLocation = useLocation();
+  const useQuery = () => {
+    return new URLSearchParams(curLocation.search);
+  };
+  let query = useQuery();
+  const typeTerm = query.get("t");
   return (
-    <Link
-      to={`details/${movieInfo.media_type}/${movieInfo.id}`}
-      className={styles.movie}
-    >
+    <Link to={`details/${typeTerm}/${movieInfo.id}`} className={styles.movie}>
       <img src={posterSrc} alt="poster" />
       <div className={styles.description}>
         <h2>{movieInfo.title || movieInfo.name}</h2>

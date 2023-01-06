@@ -7,7 +7,10 @@ const MainContainer = (props) => {
       <div
         className={styles.back}
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.8)), url("${props.backImg}")`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.3)), url("${props.backImg}")`,
+          height: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
         }}
       ></div>
       {props.children}
