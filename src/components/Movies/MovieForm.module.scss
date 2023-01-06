@@ -48,3 +48,19 @@ form {
     box-sizing: content-box;
   }
 }
+
+@media (max-width: 767.98px) {
+  section {
+    form {
+      input {
+        width: 60%;
+      }
+      select {
+        width: 20%;
+      }
+      button {
+        width: 20%;
+      }
+    }
+  }
+}

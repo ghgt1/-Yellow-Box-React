@@ -50,3 +50,10 @@
     }
   }
 }
+
+// 반응형 배치
+@media (max-width: 575.98px) {
+  div.details {
+    display: block;
+  }
+}
