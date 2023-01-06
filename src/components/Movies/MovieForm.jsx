@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./MovieForm.module.scss";
 
-const MovieForm = () => {
+const MovieForm = ({ isSubmitted }) => {
   const [inputTitle, setInputTitle] = useState();
   const [inputYear, setInputYear] = useState("all");
   const [inputType, setInputType] = useState("multi");
@@ -26,8 +26,12 @@ const MovieForm = () => {
     setInputType(event.target.value);
     navigate(`/?q=${inputTitle}&y=${inputYear}&t=${event.target.value}`);
   };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    isSubmitted(true);
+  };
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <input
         type="text"
         name="title"

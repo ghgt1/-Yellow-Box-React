@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Main.module.scss";
 import MainContainer from "../components/UI/MainContainer";
 import MovieForm from "../components/Movies/MovieForm";
 import GetMovies from "../components/Movies/GetMovies";
 
 const Main = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const submitHandler = (status) => {
+    setIsSubmitted(status);
+  };
+
   return (
     <main>
       <section>
@@ -16,10 +21,10 @@ const Main = () => {
           <h2>Explore any movies, TV shows, series or episodes.</h2>
           <span>Powered by OMDB api.</span>
         </div>
-        <MovieForm />
+        <MovieForm isSubmitted={submitHandler} />
       </section>
       <MainContainer>
-        <GetMovies />
+        <GetMovies submitStatus={isSubmitted} submitHandle={submitHandler} />
       </MainContainer>
     </main>
   );
