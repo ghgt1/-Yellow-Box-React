@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <main>
       <section>
-        <div className={styles.main}>
+        <div className={`${styles.main} logo`}>
           <span>YELLOW&nbsp;</span>
           <span>BOX</span>
         </div>

@@ -4,6 +4,7 @@ import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import Main from "./pages/Main";
 import Detail from "./pages/Detail";
+import ToTop from "./components/UI/ToTop";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route index element={<Main />} />
         <Route path="/details/:movieType/:movieId" element={<Detail />} />
       </Routes>
+      <ToTop />
       <Footer />
     </>
   );
