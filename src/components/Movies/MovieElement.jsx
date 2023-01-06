@@ -4,7 +4,6 @@ import styles from "./MovieElement.module.scss";
 import noImgEl from "./../../assets/image-not-found.png";
 
 const MovieElement = ({ movieInfo }) => {
-  console.log(movieInfo);
   const year = (movieInfo.first_air_date || movieInfo.release_date)?.slice(
     0,
     4
