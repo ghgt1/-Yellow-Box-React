@@ -1,19 +1,18 @@
-export async function searchMovies(title, year = "", type = "multi") {
+export async function searchMovies(title, year = "", type = "multi", page) {
   try {
     let res = "";
-    if (year !== "all") {
-      console.log(year);
+    if (year !== "전체 기간") {
       res = await fetch(
-        `https://api.themoviedb.org/3/search/${type}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR&include_adult=false&page=1&query=${title}&year=${year}`
+        `https://api.themoviedb.org/3/search/${type}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR&include_adult=false&page=${page}&query=${title}&year=${year}`
       );
     } else {
       res = await fetch(
-        `https://api.themoviedb.org/3/search/${type}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR&include_adult=false&page=1&query=${title}`
+        `https://api.themoviedb.org/3/search/${type}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR&include_adult=false&page=${page}&query=${title}`
       );
     }
     const json = await res.json();
-    let { results: movies } = json;
-    return movies;
+    let { results: movies, total_pages: totalPages } = json;
+    return [movies, totalPages];
   } catch (error) {
     console.log(error);
   }
