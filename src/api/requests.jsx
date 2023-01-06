@@ -23,7 +23,7 @@ export async function detailMovies(id, type) {
   try {
     let res = "";
     res = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR`
+      `https://api.themoviedb.org/3/${type}/${id}?api_key=b18e798ff377ef49f1c335283e7c43d6&language=ko-KR`
     );
     const json = await res.json();
     // 정보가 흩어져있어서 그냥 전체 결과를 돌려줌
