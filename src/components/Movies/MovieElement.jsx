@@ -17,7 +17,8 @@ const MovieElement = ({ movieInfo }) => {
     return new URLSearchParams(curLocation.search);
   };
   let query = useQuery();
-  const typeTerm = query.get("t");
+  let typeTerm = query.get("t");
+  if (typeTerm === "multi") typeTerm = movieInfo.media_type;
   return (
     <Link to={`details/${typeTerm}/${movieInfo.id}`} className={styles.movie}>
       <img src={posterSrc} alt="poster" />
