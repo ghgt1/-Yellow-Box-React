@@ -47,13 +47,25 @@ const GetMovies = ({ submitStatus, submitHandle }) => {
     }, 2000);
   };
 
+  // 최초호출. 즉 뒤로가기나 새로고침에 대응
   useEffect(() => {
     setMovies([]);
     page.current = 1;
-    submitHandle(false);
+    if (searchTerm) fetchSearchMovies();
+  }, []);
+
+  // submit시 호출
+  useEffect(() => {
+    console.log("ZZ");
+    setMovies([]);
+    page.current = 1;
     if (searchTerm && submitStatus) {
+      console.log("zzz");
       fetchSearchMovies();
     }
+    return () => {
+      submitHandle(false);
+    };
   }, [submitStatus]);
 
   // insetesection observer로 무한스크롤 구현
