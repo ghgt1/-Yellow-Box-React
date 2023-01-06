@@ -1,0 +1,30 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: 0.875rem 6rem 1.05rem;
+  padding: 2.225rem 1rem 3.038rem;
+  .main {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      span {
+        font-size: 2.5rem;
+        &:nth-child(1) {
+          color: #fdc000;
+        }
+        &:last-child {
+          color: #000000;
+        }
+      }
+    }
+  }
+  .description {
+    h2 {
+      font-size: 1.125rem;
+      margin: 1.25rem 0;
+    }
+    span {
+      font-size: 0.75rem;
+    }
+  }
+}

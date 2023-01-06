@@ -1,0 +1,13 @@
+.movie-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 10px;
+  padding: 20px 0;
+  display: flex;
+  span.inner {
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #ced4da;
+  }
+}

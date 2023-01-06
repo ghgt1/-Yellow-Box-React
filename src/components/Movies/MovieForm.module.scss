@@ -1,0 +1,66 @@
+form {
+  width: 100%;
+  margin-top: 1.3rem;
+  display: flex;
+  align-items: center;
+  input {
+    margin-right: 0.7rem;
+    // width: 52rem;
+    width: 80%;
+    height: 2.25rem;
+    color: #212529;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    &:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #fee080;
+      outline: 0;
+    }
+  }
+  select {
+    margin-right: 0.7rem;
+    // width: 8rem;
+    width: 10%;
+    height: 2.25rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    box-sizing: content-box;
+  }
+  button {
+    // width: 7.5rem;
+    width: 10%;
+    height: 2.25rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: #fdc000;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-weight: 700;
+    box-sizing: content-box;
+  }
+}
+
+@media (max-width: 767.98px) {
+  section {
+    form {
+      input {
+        width: 60%;
+      }
+      select {
+        width: 20%;
+      }
+      button {
+        width: 20%;
+      }
+    }
+  }
+}
