@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./MovieForm.module.scss";
 
 const MovieForm = ({ isSubmitted }) => {
-  const [inputTitle, setInputTitle] = useState();
+  const [inputTitle, setInputTitle] = useState("");
   const [inputYear, setInputYear] = useState("all");
   const [inputType, setInputType] = useState("multi");
 
@@ -33,6 +33,7 @@ const MovieForm = ({ isSubmitted }) => {
   return (
     <form onSubmit={submitHandler}>
       <input
+        value={inputTitle}
         type="text"
         name="title"
         placeholder="Search Worldwide movies, series, or episodes."
