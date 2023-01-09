@@ -16,7 +16,6 @@ const Loader = () => {
 };
 
 const Loading = () => {
-  console.log("로딩작동중");
   return (
     <>
       <Loader />

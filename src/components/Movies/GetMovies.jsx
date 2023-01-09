@@ -56,11 +56,9 @@ const GetMovies = ({ submitStatus, submitHandle }) => {
 
   // submit시 호출
   useEffect(() => {
-    console.log("ZZ");
     setMovies([]);
     page.current = 1;
     if (searchTerm && submitStatus) {
-      console.log("zzz");
       fetchSearchMovies();
     }
     return () => {
@@ -79,7 +77,6 @@ const GetMovies = ({ submitStatus, submitHandle }) => {
         movies.length > 0 &&
         totalPages.current >= page.current
       ) {
-        console.log("무한스크롤작동중");
         observer.unobserve(entry.target);
         fetchSearchMovies();
       }
@@ -110,7 +107,6 @@ const GetMovies = ({ submitStatus, submitHandle }) => {
     searchResults = movies.map((movie) => {
       return <MovieElement key={shortid.generate()} movieInfo={movie} />;
     });
-    console.log(searchResults);
   }
 
   return (

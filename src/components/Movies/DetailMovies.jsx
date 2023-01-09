@@ -20,7 +20,6 @@ const DetailMovies = ({ setBackground }) => {
     const results = await detailMovies(id, type);
     setTimeout(() => {
       setMovieInfo(results);
-      console.log(results);
       setBackground(
         `https://image.tmdb.org/t/p/original${results.backdrop_path}`
       );
@@ -62,8 +61,6 @@ const DetailMovies = ({ setBackground }) => {
             <span>{`${voteRate}/10 (${movieInfo.vote_count})`}</span>
           </p>
         </div>
-
-        {console.log(movieInfo)}
         <div>
           제작사
           {movieInfo.production_companies &&

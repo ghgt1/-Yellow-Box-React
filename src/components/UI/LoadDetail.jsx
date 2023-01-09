@@ -22,7 +22,6 @@ const Loader = () => {
 };
 
 const LoadDetail = () => {
-  console.log("로딩작동중");
   return (
     <>
       <Loader />
