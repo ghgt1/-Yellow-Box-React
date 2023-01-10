@@ -14,7 +14,7 @@
 
 - Programming
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=PostCSS&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![CSS Modules](https://img.shields.io/badge/CssModules-DD3A0A?style=for-the-badge&logo=CssModules&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
 
 - Deploy
 
@@ -44,4 +44,4 @@
 - 이전의 api(OMDB)에비해 한글검색을 제공하지만, 전체적인 데이터의 질이 아쉽다고 느껴졌습니다.
 - 리듀서와, 컨텍스트 api와 같은 hook들을 사용해보고싶었으나 사용할 기회를 찾지못하였습니다.
 - **변수, state, ref 의 차이를 제대로 이해하지못하고 처음에 굉장히 고전하였습니다.** 따라서 리액트의 라이프사이클과 재렌더링에 대해서 추가적으로 공부를 했습니다.
-
+- 처음엔 포탈을 사용하여 로딩을 구현하였으나, 스켈레톤UI로 변경하여 사용하지 못하였습니다.
